@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 
-//Äæ×ª×Ö·û´®¡ª¡ªÊäÈëÒ»¸ö×Ö·û´®£¬½«ÆäÄæ×ª²¢Êä³ö¡£
+//é€†è½¬å­—ç¬¦ä¸²â€”â€”è¾“å…¥ä¸€ä¸ªå­—ç¬¦ä¸²ï¼Œå°†å…¶é€†è½¬å¹¶è¾“å‡ºã€‚
 @SuppressWarnings("serial")
 class ReverisbileArrayList<T>  extends ArrayList<T>{
 	
@@ -39,9 +39,9 @@ class ReverisbileArrayList<T>  extends ArrayList<T>{
 }
 public class test1 {
 	public static void main(String[] args) {
-		String str ="you to be cuccess whith  more exercise,dd ro bb¡£aa";
-		//µÚÒ»ÖÖ
-		ReverisbileArrayList<String> arrayList = new ReverisbileArrayList<String>(Arrays.asList("you to be cuccess whith  more exercise,dd ro bb¡£aa".split(" ")));
+		String str ="you to be cuccess whith  more exercise,dd ro bbã€‚aa";
+		//ç¬¬ä¸€ç§
+		ReverisbileArrayList<String> arrayList = new ReverisbileArrayList<String>(Arrays.asList("you to be cuccess whith  more exercise,dd ro bbã€‚aa".split(" ")));
 		for(String s:arrayList){
 			System.out.print(s+" ");
 		}
@@ -50,14 +50,15 @@ public class test1 {
 			System.out.print(s+" ");
 		}
 		System.out.println();
-		//µÚ¶şÖÖ
+		//ç¬¬äºŒç§
 		StringBuffer buffer= new StringBuffer(str);
 		System.out.println(buffer.reverse());
-		//µÚÈıÖÖ
+		//ç¬¬ä¸‰ç§
 		System.out.println(new JDKRevrser().reverser(str));
-		//µÚËÄÖÖ
+		//ç¬¬å››ç§
 		System.out.println(new test1().reverses(str)+"???");
-		
+		//ç¬¬äº”ç§
+		System.out.println(new test1().reverse_2(str));
 		
 	}
 	public String reverses(String str){
@@ -74,7 +75,16 @@ public class test1 {
 		}
 		return new String(chars);
 	}
-	
+	public String reverse_2(String str){
+		if(str == null || str.length()<=1 ){
+			return str;
+		}
+		StringBuffer strs = new StringBuffer(str.length());
+		for(int i= str.length()-1;i>=0;i--){
+			strs.append(str.charAt(i));
+		}
+		return strs.toString();
+	}
 
 }
 //
