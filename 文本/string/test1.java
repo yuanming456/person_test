@@ -8,7 +8,7 @@ import java.util.Iterator;
 //逆转字符串——输入一个字符串，将其逆转并输出。
 @SuppressWarnings("serial")
 class ReverisbileArrayList<T>  extends ArrayList<T>{
-	
+
 	public ReverisbileArrayList(Collection<T> c){super(c);
 	}
 	@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -35,9 +35,9 @@ class ReverisbileArrayList<T>  extends ArrayList<T>{
 			}
 		};
 	}
-	
+
 }
-public class test1 {
+public class test1{
 	public static void main(String[] args) {
 		String str ="you to be cuccess whith  more exercise,dd ro bb。aa";
 		//第一种
@@ -59,7 +59,7 @@ public class test1 {
 		System.out.println(new test1().reverses(str)+"???");
 		//第五种
 		System.out.println(new test1().reverse_2(str));
-		
+
 	}
 	public String reverses(String str){
 		if(str == null || str.length()<=1 ){
@@ -71,7 +71,7 @@ public class test1 {
 			char swap = chars[left];
 			chars[left] = chars[right];
 			chars[right--] = swap;
-			
+
 		}
 		return new String(chars);
 	}
@@ -93,7 +93,5 @@ class JDKRevrser{
 		if((null == str )|| (str.length()<=1)) return str;
 		return new StringBuffer(str).reverse().toString();
 	}
+	//测试
 }
-
-
-
